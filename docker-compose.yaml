@@ -3,7 +3,7 @@ version: '3'
 services:
   jira:
     image: jira-software
-    container_name: jira
+    container_name: jira-software
     restart: unless-stopped
     # build:
     #   context: ./jira-software
