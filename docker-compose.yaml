@@ -6,7 +6,7 @@ services:
     container_name: jira
     restart: unless-stopped
     build:
-      context: ./docker-atlassian-jira-software
+      context: ./jira-software
     environment:
       - TZ="Asia/Tehran"
     mem_limit: 6144m
