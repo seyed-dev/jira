@@ -1,4 +1,4 @@
-FROM jira
+FROM cptactionhank/atlassian-jira-software:latest
 USER root
 
 # Add proxy unpacking to container

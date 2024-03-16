@@ -2,11 +2,11 @@ version: '3'
 
 services:
   jira:
-    # image: tahlilgaran/jira:latest
+    image: jira-software
     container_name: jira
     restart: unless-stopped
-    build:
-      context: ./jira-software
+    # build:
+    #   context: ./jira-software
     environment:
       - TZ="Asia/Tehran"
     mem_limit: 6144m
