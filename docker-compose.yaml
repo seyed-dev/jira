@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  jira:
+    # image: tahlilgaran/jira:latest
+    container_name: jira
+    restart: unless-stopped
+    build:
+      context: ./docker-atlassian-jira-software
+    environment:
+      - TZ="Asia/Tehran"
+    mem_limit: 6144m
+    ports:
+      - 0.0.0.0:8000:8080
+    volumes:
+      - ./volume:/var/atlassian/jira
+    depends_on:
+      - jira-db
+    networks:
+      - jira
+      - jira-db
+
+  jira-db:
+    image: postgres
+    container_name: jira-db
+    environment:
+      - POSTGRES_DB=jiradb
+      - POSTGRES_USER=jirauser
+      - POSTGRES_PASSWORD=jirapass
+    networks:
+      - jira-db
+
+
+networks:
+  jira:
+  jira-db:
