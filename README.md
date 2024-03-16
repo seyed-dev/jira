@@ -16,7 +16,7 @@ docker build -t jira-software .
 docker-compose up -d
 ```
 
-### Jira Crack
+### Jira استغفرالله
 ```
 docker exec -it jira-software bash
 
